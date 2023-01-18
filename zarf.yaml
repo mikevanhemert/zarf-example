@@ -1,0 +1,17 @@
+kind: ZarfPackageConfig
+metadata:
+  name: zarf-example
+  description: "Example Zarf package with podinfo deployment"
+  architeccture: amd64
+
+components:
+  - name: podinfo
+    required: true
+    charts:
+      - name: podinfo
+        namespace: podinfo
+        url: https://github.com/stefanprodan/podinfo.git
+        version: "6.3.0"
+        gitPath: charts/podinfo
+    images:
+      - "ghcr.io/stefanprodan/podinfo:6.3.0"
