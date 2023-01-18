@@ -1,0 +1,6 @@
+*.zst
+*-sbom/
+.terraform/
+terraform.tfstate*
+.terraform.lock.hcl
+.terraform.tfstate*
