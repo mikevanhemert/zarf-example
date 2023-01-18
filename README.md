@@ -36,4 +36,4 @@ Navigate to <a href="localhost:9898">localhost:9898</a> in your browser
 
 | ...k3d cluster | ...EKS cluster |
 | - | - |
-| <pre><code>k3d cluster delete</code></pre> | <pre><code>terraform destroy -auto-approve</code></pre> |
+| <pre><code>k3d cluster delete</code></pre> | <pre><code>terraform destroy -var-file us-east.tfvars -auto-approve</code></pre> |
