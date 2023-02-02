@@ -15,7 +15,7 @@ zarf package create --confirm
 | ...k3d cluster | ...EKS cluster |
 | - | - |
 | Stand up a local k3d cluster | Stand up an EKS cluster |
-| <pre><code>k3d cluster create</code></pre> | <pre><code>terraform init<br>terraform apply -var-file us-east.tfvars -auto-approve<br>aws eks --region us-east-2 update-kubeconfig --name eg-test-eks-cluster</code></pre> |
+| <pre><code>k3d cluster create</code></pre> | <pre><code>terraform init<br>terraform apply -var-file us-east.tfvars -auto-approve<br>aws eks --region us-east-1 update-kubeconfig --name bl-demo-eks-cluster</code></pre> |
 
 ## Deploy the podinfo package
 
@@ -27,7 +27,7 @@ zarf package deploy zarf-package-zarf-example-amd64.tar.zst --confirm
 
 ```bash
 kubectl get all -n podinfo
-kubectl port-forward -n podinfo svc/zarf-podinfo 9898:9898
+kubectl port-forward -n podinfo svc/podinfo 9898:9898
 ```
 
 Navigate to <a href="localhost:9898">localhost:9898</a> in your browser
